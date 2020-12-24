@@ -25,7 +25,7 @@ const useConstructor = (callBack: () => void) => {
 
 /**
  * Main component, which hosts the PhotoGrid and PhotoViewer. It is following React's "Lifting State Up" rule,
- * which passes states down to its children components through properties, then let children components handle
+ * which passes states down to its children components through properties, then let the children components handle
  * any state change by passing down the state handlers.
  *
  * User can scroll down infinitely on the PhotoGrid component to load more photos until it reaches the LOADING_THRESHOLD.
@@ -33,7 +33,9 @@ const useConstructor = (callBack: () => void) => {
  * @author Terry Deng
  */
 export default function Main() {
+    // A CSS-in-JS solution that makes styles scoped in a conflict-free and reusable way.
     const classes = useMainStyles();
+
     const [photoList, setPhotoList] = useState<any>([]);
     const [hasMore, setHasMore] = useState<boolean>(true);
     const [viewerOpen, setViewerOpen] = useState<boolean>(false);

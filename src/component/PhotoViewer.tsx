@@ -10,8 +10,8 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 /**
  * PhotoViewer component, which shows the selected photo in full screen.
- * User can navigate to the previous/next photo by clicking the arrows. Upon closing the photo viewer,
- * user will be taken back to the PhotoGrid and scrolled to the last photo seen in the PhotoViewer.
+ * User can navigate to the previous/next photo by clicking the arrows.
+ * Upon closing the photo viewer, user will be taken back to the PhotoGrid and scrolled to the last photo seen in the PhotoViewer.
  *
  * @author Terry Deng
  */
