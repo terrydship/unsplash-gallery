@@ -8,21 +8,30 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import UnsplashPhotoResource from "../common/resource/UnsplashPhotoResource";
 import BackgroundImage from "../common/assets/background.jpg";
 
-// Maximum number of photos to be loaded.
+// Maximum number of photos to be loaded. Change it accordingly for demo/testing purpose.
 const LOADING_THRESHOLD = 36;
 
-/**
+/*
  * Custom hook to simulate the constructor in a class component.
- * Ensures the callback happens only ONCE and BEFORE the initial render
+ * Ensures the callback happens only ONCE and BEFORE the initial render.
  */
 const useConstructor = (callBack: () => void) => {
     const [hasBeenCalled, setHasBeenCalled] = useState(false);
     if (!hasBeenCalled) {
-        callBack();
+        callBack && callBack();
         setHasBeenCalled(true);
     }
 }
 
+/**
+ * Main component, which hosts the PhotoGrid and PhotoViewer. It is following React's "Lifting State Up" rule,
+ * which passes states down to its children components through properties, then let children components handle
+ * any state change by passing down the state handlers.
+ *
+ * User can scroll down infinitely on the PhotoGrid component to load more photos until it reaches the LOADING_THRESHOLD.
+ *
+ * @author Terry Deng
+ */
 export default function Main() {
     const classes = useMainStyles();
     const [photoList, setPhotoList] = useState<any>([]);
@@ -57,9 +66,8 @@ export default function Main() {
                         photoList && (
                             <PhotoGrid
                                 cols={3}
-                                gap={8}
                                 photoList={photoList}
-                                photoGrid={classes.photoGrid}
+                                photoGridClass={classes.photoGrid}
                                 parentHandler={{
                                     openPhotoViewer: () => setViewerOpen(true),
                                     setPhotoIndex: (index: number) => setCurrentPhotoIndex(index)

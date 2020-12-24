@@ -1,5 +1,10 @@
 import axios, {AxiosInstance} from 'axios';
 
+/**
+ * Base http client.
+ *
+ * @author Terry Deng
+ */
 abstract class HttpClient {
     protected instance: AxiosInstance;
     protected readonly accessKey: string;  // Unsplash API access key
