@@ -15,8 +15,8 @@ const useMainStyles = makeStyles((theme: Theme) =>
             alignItems: 'center'
         },
         paper: {
-            width: 800,
-            height: 600,
+            width: theme.spacing(100),
+            height: theme.spacing(75),
             opacity: 0.9
         },
         photoGrid: {
