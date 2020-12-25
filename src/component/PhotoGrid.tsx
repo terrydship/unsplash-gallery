@@ -14,7 +14,7 @@ import InfoIcon from '@material-ui/icons/Info';
 interface PhotoGridProps {
     cols: number, // Number of columns in the Photo Grid
     photoList: Array<PhotoModel>, // List of photos to be populated in the grid
-    photoGridClass?: string, // Optional class to be applied to the grid
+    photoGridClass?: string, // Optional class applied to the grid
     parentHandler: {
         openPhotoViewer: () => void,
         setPhotoIndex: (param: number) => void
@@ -31,7 +31,6 @@ const PhotoGrid = (props: PhotoGridProps) => {
                         <ImageListItemBar
                             actionIcon={
                                 <IconButton
-                                    style={{color: 'rgba(255, 255, 255, 0.54)'}}
                                     onClick={() => {
                                         props.parentHandler.openPhotoViewer();
                                         props.parentHandler.setPhotoIndex(index);

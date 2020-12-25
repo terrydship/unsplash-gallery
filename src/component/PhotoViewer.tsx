@@ -10,23 +10,24 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 /**
  * PhotoViewer component, which shows the selected photo in full screen.
+ *
  * User can navigate to the previous/next photo by clicking the arrows.
  * Upon closing the photo viewer, user will be taken back to the PhotoGrid and scrolled to the last photo seen in the PhotoViewer.
  *
  * @author Terry Deng
  */
 interface PhotoViewerProps {
-    open: boolean,
-    closeHandler: () => void,
-    currentIndex: number,
-    photoList: Array<PhotoModel>,
-    viewerStyle: object,
-    appBarClass?: string,
-    photoDescriptionClass?: string,
-    photoPanelClass?: string,
+    open: boolean, // Indicate if the photo viewer is open or closed
+    closeHandler: () => void, // Handler to close the photo viewer
+    currentIndex: number, // Index of the current photo populated in the viewer
+    photoList: Array<PhotoModel>, // List of photos to be populated in the viewer
+    viewerStyle: object, // Styles applied to the photo viewer background
+    appBarClass?: string, // Optional class applied to the app bar which holds the photo description and previous/next arrows
+    photoDescriptionClass?: string, // Optional class applied to the photo description
+    photoPanelClass?: string, // Optional class applied to the photo viewer
     parentHandler: {
         setPhotoIndex: (param: number) => void
-    }
+    } // State handlers passed from the parent component
 }
 
 const PhotoViewer = (props: PhotoViewerProps) => {
