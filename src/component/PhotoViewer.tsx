@@ -22,7 +22,6 @@ interface PhotoViewerProps {
     currentIndex: number, // Index of the current photo populated in the viewer
     photoList: Array<PhotoModel>, // List of photos to be populated in the viewer
     viewerStyle: object, // Styles applied to the photo viewer background
-    appBarClass?: string, // Optional class applied to the app bar which holds the photo description and previous/next arrows
     photoDescriptionClass?: string, // Optional class applied to the photo description
     photoPanelClass?: string, // Optional class applied to the photo viewer
     parentHandler: {
@@ -57,7 +56,7 @@ const PhotoViewer = (props: PhotoViewerProps) => {
                 onExited: scrollCallback
             }}
         >
-            <AppBar className={props.appBarClass}>
+            <AppBar position="sticky">
                 <Toolbar>
                     {
                         props.currentIndex > 0 && (
@@ -78,8 +77,8 @@ const PhotoViewer = (props: PhotoViewerProps) => {
                     }
                 </Toolbar>
             </AppBar>
-            <div>
-                {props.open && <img className={props.photoPanelClass} src={currentPhoto.urls.regular} alt={currentPhoto.alt_description} />}
+            <div className={props.photoPanelClass}>
+                {props.open && <img src={currentPhoto.urls.regular} alt={currentPhoto.alt_description} />}
             </div>
         </Dialog>
     );

@@ -28,18 +28,24 @@ const useMainStyles = makeStyles((theme: Theme) =>
                 color: 'rgba(255, 255, 255, 0.54)'
             }
         },
-        appBar: {
-            position: 'relative'
-        },
         photoDescription: {
             marginLeft: theme.spacing(2),
             flex: 1,
             textAlign: 'center'
         },
         photoPanel: {
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto'
+            height: theme.spacing(96),
+            '& img': {
+                position: 'absolute',
+                maxWidth: '100%',
+                maxHeight: '100%',
+                margin: 'auto',
+                display: 'block',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0
+            }
         }
     })
 );

@@ -89,7 +89,6 @@ export default function Main() {
                         backgroundPosition: 'center',
                         backgroundSize: 'cover'
                     }}
-                    appBarClass={classes.appBar}
                     photoDescriptionClass={classes.photoDescription}
                     photoPanelClass={classes.photoPanel}
                     parentHandler={{
