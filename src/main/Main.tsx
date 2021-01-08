@@ -52,7 +52,7 @@ export default function Main() {
     }
 
     // Load photos only once before the initial render. It also gets rid of the warning message when useEffect.
-    useConstructor(() => loadPhotos());
+    useConstructor(loadPhotos);
 
     return (
         <Box className={classes.root}>
