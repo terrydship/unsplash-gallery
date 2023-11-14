@@ -20,7 +20,7 @@ interface PhotoViewerProps {
     open: boolean, // Indicate if the photo viewer is open or closed
     closeHandler: () => void, // Handler to close the photo viewer
     currentIndex: number, // Index of the current photo populated in the viewer
-    photoList: Array<PhotoModel>, // List of photos to be populated in the viewer
+    photoList: PhotoModel[], // List of photos to be populated in the viewer
     viewerStyle: object, // Styles applied to the photo viewer background
     photoDescriptionClass?: string, // Optional class applied to the photo description
     photoPanelClass?: string, // Optional class applied to the photo viewer

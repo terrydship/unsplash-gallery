@@ -7,6 +7,7 @@ import PhotoViewer from "../component/PhotoViewer";
 import InfiniteScroll from "react-infinite-scroll-component";
 import UnsplashPhotoResource from "../common/resource/UnsplashPhotoResource";
 import BackgroundImage from "../common/assets/background.jpg";
+import PhotoModel from "../model/PhotoModel";
 
 // Maximum number of photos to be loaded. Change it accordingly for demo/testing purpose.
 const LOADING_THRESHOLD = 36;
@@ -36,7 +37,7 @@ export default function Main() {
     // A CSS-in-JS solution that makes styles scoped in a conflict-free and reusable way.
     const classes = useMainStyles();
 
-    const [photoList, setPhotoList] = useState<any>([]);
+    const [photoList, setPhotoList] = useState<PhotoModel[]>([]);
     const [hasMore, setHasMore] = useState<boolean>(true);
     const [viewerOpen, setViewerOpen] = useState<boolean>(false);
     const [currentPhotoIndex, setCurrentPhotoIndex] = useState<number>(0);

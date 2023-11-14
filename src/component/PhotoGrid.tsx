@@ -13,7 +13,7 @@ import InfoIcon from '@material-ui/icons/Info';
  */
 interface PhotoGridProps {
     cols: number, // Number of columns in the Photo Grid
-    photoList: Array<PhotoModel>, // List of photos to be populated in the grid
+    photoList: PhotoModel[], // List of photos to be populated in the grid
     photoGridClass?: string, // Optional class applied to the grid
     parentHandler: {
         openPhotoViewer: () => void,
